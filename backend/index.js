@@ -7,7 +7,11 @@ import UserRoutes from './Routes/User.routes.js';
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://gastos-c-g2x2.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json()); // <--- Vital para que el registro funcione
 
 // 2. Conexión a DB mejorada para Serverless
