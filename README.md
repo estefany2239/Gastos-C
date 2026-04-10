@@ -33,27 +33,26 @@ Backend
  Arquitectura (Encarpetado)
 
 El proyecto utiliza una estructura de **Separación de Responsabilidades**:
-´´´markdown 
+```text
 GASTOS/
-├── app/                      # --- FRONTEND (React + Vite) ---
+├── app/                  # --- FRONTEND (React + Vite) ---
 │   ├── src/
-│   │   ├── feature/          # Módulos funcionales (Auth, Dashboard)
-│   │   │   ├── apis/         # Definición de endpoints
-│   │   │   ├── components/   # UI específica del módulo
-│   │   │   └── services/     # Lógica de conexión (Axios)
-│   │   ├── layout/           # Estructura global (Navbar, Sidebar, Footer)
-│   │   ├── shared/           # Componentes y utilidades globales
-│   │   ├── App.jsx           # Configuración de rutas
-│   │   └── main.jsx          # Renderizado inicial
+│   │   ├── feature/      # Módulos funcionales (Auth, Dashboard)
+│   │   │   ├── apis/     # Definición de endpoints
+│   │   │   ├── components/
+│   │   │   └── services/
+│   │   ├── layout/       # Estructura global (Navbar, Sidebar)
+│   │   ├── shared/       # Componentes globales
+│   │   ├── App.jsx       
+│   │   └── main.jsx      
 │   └── package.json
-│
-├── backend/                  # --- BACKEND (Node.js + Express) ---
-│   ├── Config/               # Conexión a Base de Datos (db.js)
-│   ├── Controllers/          # Funciones de lógica de negocio
-│   ├── Models/               # Esquemas de Mongoose
-│   ├── Routes/               # Definición de rutas (Endpoints)
-│   ├── index.js              # Punto de entrada del servidor
-│   └── .env                  # Variables de entorno (Sensible)
+├── backend/              # --- BACKEND (Node.js + Express) ---
+│   ├── Config/           # Conexión a DB
+│   ├── Controllers/      
+│   ├── Models/           
+│   ├── Routes/           
+│   ├── index.js          
+│   └── .env              
 └── README.md
 ´´´
 
