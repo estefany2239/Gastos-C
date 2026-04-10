@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Usamos 127.0.0.1 para evitar problemas de conexión en local
-const API = axios.create({ baseURL: 'http://127.0.0.1:4000/api/users' });
+const API = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'http://127.0.0.1:4000/api/users' });
 
 export const registrarUsuario = async (datos) => {
     const res = await API.post('/registrar', datos);
