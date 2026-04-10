@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://Gastos-proyecto.vercel.app/Sitemap.xml
