@@ -56,10 +56,7 @@ GASTOS/
 │   └── .env                  # Variables de entorno (Sensible)
 └── README.md
 
-
 ![alt text](image.png)
-![alt text](image-1.png)
-
 Instalación y Ejecución
 
 git clone [https://github.com/estefany2239/Gastos.git](https://github.com/estefany2239/Gastos.git)
