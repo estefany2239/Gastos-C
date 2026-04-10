@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  Box, Typography, Button, Container, Grid, Paper, Stack, Card, CardContent, Divider 
+  Box, Typography, Button, Container, Grid, Paper, Stack, Card, CardContent 
 } from '@mui/material';
 import { 
   PersonAddOutlined as UserIcon, 
@@ -9,10 +9,7 @@ import {
   SecurityOutlined as SecurityIcon, 
   TimerOutlined as SpeedIcon,
   AutoGraphOutlined as AnalyticsIcon,
-  DiamondOutlined as DiamondIcon,
-  Facebook,
-  Instagram,
-  LinkedIn
+  DiamondOutlined as DiamondIcon
 } from '@mui/icons-material';
 
 export const Content = () => {
@@ -110,17 +107,29 @@ export const Content = () => {
               ))}
             </Stack>
 
-            <Button sx={{ 
-              background: goldGradient, 
-              color: 'white', 
-              fontWeight: 'bold', 
-              px: 5, py: 2, 
-              borderRadius: '50px',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-              '&:hover': { filter: 'brightness(1.1)', transform: 'translateY(-2px)' },
-              transition: 'all 0.3s ease'
-            }}>
-              Empezar ahora
+            {/* BOTÓN ACTUALIZADO */}
+            <Button 
+              component="a"
+              href="https://github.com/estefany2239/Gastos-C.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ 
+                background: goldGradient, 
+                color: 'white', 
+                fontWeight: 'bold', 
+                px: 5, py: 2, 
+                borderRadius: '50px',
+                boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+                textDecoration: 'none',
+                '&:hover': { 
+                  filter: 'brightness(1.1)', 
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 6px 20px rgba(0,0,0,0.3)'
+                },
+                transition: 'all 0.3s ease'
+              }}
+            >
+              Ver Repositorio
             </Button>
           </Grid>
 
@@ -176,7 +185,7 @@ export const Content = () => {
           </Grid>
         </Box>
 
-        {/* --- SECCIÓN 3: CARACTERÍSTICAS (TARJETAS ALINEADAS) --- */}
+        {/* --- SECCIÓN 3: CARACTERÍSTICAS --- */}
         <Box sx={{ textAlign: 'center', mb: 8 }}>
           <Typography variant="h4" sx={{ fontWeight: 900, fontFamily: "'Playfair Display', serif", mb: 2 }}>
             Aquí estamos <span style={{ color: '#8A6E2F' }}>Para ti</span>
@@ -231,15 +240,17 @@ export const Content = () => {
             Únete a la élite que ya controla sus gastos con precisión y elegancia. 
             El éxito financiero comienza con una decisión inteligente.
           </Typography>
-          <Button sx={{ 
-            border: '2px solid black',
-            color: 'black',
-            fontWeight: 'bold',
-            px: 6, py: 2,
-            borderRadius: '15px',
-            '&:hover': { bgcolor: 'black', color: 'white' },
-            transition: '0.3s'
-          }}>
+          <Button 
+            sx={{ 
+              border: '2px solid black',
+              color: 'black',
+              fontWeight: 'bold',
+              px: 6, py: 2,
+              borderRadius: '15px',
+              '&:hover': { bgcolor: 'black', color: 'white' },
+              transition: '0.3s'
+            }}
+          >
             SOLICITAR ACCESO
           </Button>
         </Box>
