@@ -33,7 +33,7 @@ Backend
  Arquitectura (Encarpetado)
 
 El proyecto utiliza una estructura de **Separación de Responsabilidades**:
-
+´´´markdown 
 GASTOS/
 ├── app/                      # --- FRONTEND (React + Vite) ---
 │   ├── src/
@@ -55,6 +55,8 @@ GASTOS/
 │   ├── index.js              # Punto de entrada del servidor
 │   └── .env                  # Variables de entorno (Sensible)
 └── README.md
+´´´
+
 
 ![alt text](image.png)
 Instalación y Ejecución
@@ -82,3 +84,4 @@ Regional: Antioquia (Medellín)
 Programa: Análisis y Desarrollo de Software
 
 GitHub: estefany2239
+
