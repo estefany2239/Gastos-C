@@ -16,12 +16,17 @@ import {
 } from '@mui/icons-material';
 import { NavLink, useNavigate } from 'react-router-dom';
 
-export const Header = ({ notificacionesCount = 3, isAuthenticated, setIsAuthenticated }) => {
+// Agregamos userEmail como prop
+export const Header = ({ notificacionesCount = 3, isAuthenticated, setIsAuthenticated, userEmail }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
 
-  // Paleta de colores elegantes
+  // --- LÓGICA PARA LA INICIAL ---
+  // Si existe userEmail, toma la primera letra y la pone en mayúscula. 
+  // Si no, usa una 'U' (de Usuario) por defecto.
+  const inicial = userEmail ? userEmail.charAt(0).toUpperCase() : 'U';
+
   const colors = {
     cream: '#fffafb',       
     softGold: 'rgba(212, 175, 55, 0.1)',    
@@ -74,7 +79,6 @@ export const Header = ({ notificacionesCount = 3, isAuthenticated, setIsAuthenti
                 </Typography>
               </Box>
 
-              {/* Menú Desktop */}
               <Stack direction="row" spacing={0.5} sx={{ display: { xs: 'none', md: 'flex' } }}>
                 {menuItems.map((item) => (
                   <Button 
@@ -108,7 +112,10 @@ export const Header = ({ notificacionesCount = 3, isAuthenticated, setIsAuthenti
                       <Avatar sx={{ 
                         width: 40, height: 40, background: colors.goldGradient, 
                         border: `2px solid ${colors.black}`, fontWeight: 'bold', color: '#fff'
-                      }}>E</Avatar>
+                      }}>
+                        {/* Mostramos la inicial dinámica aquí */}
+                        {inicial}
+                      </Avatar>
                     </IconButton>
                     
                     <Menu
@@ -118,7 +125,10 @@ export const Header = ({ notificacionesCount = 3, isAuthenticated, setIsAuthenti
                       PaperProps={{ sx: { borderRadius: '15px', mt: 1.5, border: `1px solid ${colors.goldSolid}`, minWidth: '180px' } }}
                     >
                       <Box sx={{ px: 2, py: 1 }}>
-                        <Typography variant="subtitle2" sx={{ fontWeight: 800 }}>Estefany</Typography>
+                        {/* Mostramos el correo en lugar de un nombre estático si lo deseas */}
+                        <Typography variant="subtitle2" sx={{ fontWeight: 800 }}>
+                          {userEmail || 'Usuario'}
+                        </Typography>
                         <Typography variant="caption" color="text.secondary">Software Developer</Typography>
                       </Box>
                       <Divider />
@@ -149,7 +159,7 @@ export const Header = ({ notificacionesCount = 3, isAuthenticated, setIsAuthenti
         </Box>
       </Box>
 
-      {/* Menú Móvil (Drawer) */}
+      {/* Menú Móvil */}
       <Drawer
         variant="temporary"
         open={mobileOpen}
